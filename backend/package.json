@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "prisma generate",
+    "postinstall": "npx prisma generate",
     "db:generate": "prisma generate --schema=prisma/schema.prisma",
     "db:migrate": "prisma migrate dev --schema=prisma/schema.prisma",
     "db:push": "prisma db push --schema=prisma/schema.prisma",
@@ -20,12 +20,10 @@
   "dependencies": {
     "@libsql/client": "^0.17.2",
     "@prisma/adapter-libsql": "^7.7.0",
+    "@prisma/client": "^7.7.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.1",
-    "express": "^5.2.1"
-  },
-  "devDependencies": {
-    "@prisma/client": "^7.7.0",
+    "express": "^5.2.1",
     "prisma": "^7.7.0"
   }
 }
