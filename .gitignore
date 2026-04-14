@@ -32,3 +32,5 @@ Thumbs.db
 
 # ─── Stitch preview cache ─────────────────────────────────
 stitch-previews/
+
+.vercel

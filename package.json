@@ -5,20 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tailwindcss -i ./input.css -o ./output.css",
-    "dev": "tailwindcss -i ./input.css -o ./output.css --watch",
-    "serve": "serve . -p 3000 --no-clipboard",
+    "vercel-build": "mkdir public && cp *.html public/ && cp *.css public/ || echo \"Copied\"",
+    "build": "tailwindcss -i ./input.css -o ./public/output.css",
+    "dev": "tailwindcss -i ./input.css -o ./public/output.css --watch",
+    "serve": "serve public -p 3000 --no-clipboard",
     "start": "concurrently --names \"CSS,BACKEND,FRONTEND,SITE\" --prefix-colors \"cyan,yellow,green,magenta\" \"npm run dev\" \"node backend/server.js\" \"npx --prefix frontend vite\" \"npm run serve\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "devDependencies": {
+  "dependencies": {
     "@tailwindcss/cli": "^4.2.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.11",
     "concurrently": "^9.2.1",
+    "firebase": "^12.12.0",
     "serve": "^14.2.6",
     "tailwindcss": "^4.2.2"
   }
