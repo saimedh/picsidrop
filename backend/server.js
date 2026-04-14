@@ -8,9 +8,10 @@ const { PrismaClient } = require('./generated/prisma');
 // ─── Prisma + libSQL/SQLite setup (Prisma 7 WASM engine) ──────
 const dbUrl = process.env.DATABASE_URL ?? 'file:./prisma/dev.db';
 
-// libsql expects file URLs as  file:path/to/db
-const libsqlUrl = dbUrl.startsWith('file:') ? dbUrl : `file:${dbUrl}`;
-const libsql   = createClient({ url: libsqlUrl });
+// Handle remote URLs (Turso, Postgres) vs local SQLite files
+const isRemote = dbUrl.startsWith('libsql:') || dbUrl.startsWith('https:') || dbUrl.startsWith('wss:') || dbUrl.startsWith('postgres');
+const libsqlUrl = (!isRemote && !dbUrl.startsWith('file:')) ? `file:${dbUrl}` : dbUrl;
+const libsql   = createClient({ url: libsqlUrl, authToken: process.env.TURSO_AUTH_TOKEN });
 const adapter  = new PrismaLibSql(libsql);
 const prisma   = new PrismaClient({ adapter });
 

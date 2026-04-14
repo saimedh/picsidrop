@@ -1557,9 +1557,8 @@ function escHtml(str) {
     }
 
     // Backend Form Implementations
-    const BACKEND_URL = 'http://localhost:5000/api';
-
-    // Handle Contact Form Submission
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const BACKEND_URL = isLocal ? 'http://localhost:5000/api' : 'https://picsidrop-api.onrender.com/api';
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
