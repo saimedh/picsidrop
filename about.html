@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 20px 40px rgba(47, 47, 47, 0.06);
+        }
+        .asymmetric-shape {
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+    </style>
+    <link href="output.css" rel="stylesheet" />
+    <link href="data:," rel="icon">
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-secondary-fixed">
+<!-- TopNavBar (Shared Component) -->
+<!-- Floating Pill Navigation -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1000px] bg-white/70 dark:bg-neutral-900/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 hover:shadow-[0_16px_48px_rgba(244,105,6,0.15)] hover:border-[#F46906]/30">
+    <a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F46906] to-[#ffc5a3] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+        </div>
+        Picsi Drop
+    </a>
+    
+    <div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
+        <a class="text-[#F46906] dark:text-[#F46906] border-b-2 border-[#F46906] transition-all duration-300 pb-0.5" href="about.html">About</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
+        
+        
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+                Process <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="sender.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
+                </a>
+                <a href="traveler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
+                </a>
+            </div>
+        </div>
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+                Policies <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="terms.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
+                </a>
+                <a href="refund.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
+                </a>
+                <a href="privacy.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
+                </a>
+            </div>
+        </div>
+        
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <!-- Seamless Dark Mode Toggle -->
+        <button onclick="document.documentElement.classList.toggle('dark')" class="relative w-11 h-11 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-md border border-transparent hover:border-[#F46906]/30 dark:hover:border-[#F46906]/50 shadow-sm hover:shadow-[0_0_15px_rgba(244,105,6,0.2)] transition-all duration-500 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#F46906]/50">
+            <!-- Pulsing ring effect on hover -->
+            <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F46906]/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out origin-center pointer-events-none"></span>
+            
+            <div class="relative w-6 h-6 flex items-center justify-center pointer-events-none">
+                <!-- Moon icon for light mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-neutral-700 group-hover:rotate-[360deg] dark:opacity-0 dark:-rotate-90 dark:scale-0">dark_mode</span>
+                <!-- Sun icon for dark mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-amber-400 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100 group-hover:rotate-[360deg]">light_mode</span>
+            </div>
+        </button>
+        <a href="index.html" class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)] hover:shadow-[0_12px_24px_rgba(244,105,6,0.4)]">
+            Get Started
+        </a>
+    </div>
+</nav>
+<main class="pt-20">
+<!-- Hero: The Story -->
+<section class="relative py-24 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<span class="bg-secondary-container text-on-secondary-fixed text-[10px] font-bold tracking-[0.2em] px-4 py-1.5 rounded-full uppercase mb-6 inline-block">THE JOURNEY</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-on-surface leading-[1.05] tracking-tighter mb-8">
+                        Redefining how the world <span class="text-primary italic">moves</span> things.
+                    </h1>
+<p class="text-xl text-on-surface-variant leading-relaxed max-w-xl">
+                        At Picsi Drop, we believe every journey has value. We're building the infrastructure that turns personal travel into global logistics.
+                    </p>
+</div>
+<div class="relative group">
+<div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-fixed rounded-full blur-3xl opacity-20"></div>
+<div class="rounded-xl overflow-hidden editorial-shadow transform rotate-2 group-hover:rotate-0 transition-transform duration-500">
+<img class="w-full h-[500px] object-cover" data-alt="Modern minimalist workspace with abstract orange art on the wall and natural sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWKYH9BSfw7RWIB2_7MIjk_Et5I35GQXWmcP3l0lk9qBZQhs3HBD0EY5FeYip9Ak_5TXdF6Z7tsV29QUpqTl7kmAlukZ48mbBOnfPPOkbiFhWRt2Eknrwfon7f4lqyJ9yrfZk5mVV7FOLMJSqrneWDNJXbDTzz62-JN8cG7cSVk8CU0kWABKu3D-A6wuesfByjLspyMBshDRt3KikGc4xGcw4t3pEgYeJnf7IbYGpmXzj1zVG4FyqU8T5BW2OpViAVZZeX0rHdnys"/>
+</div>
+<div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-xl editorial-shadow max-w-[280px]">
+<p class="font-headline font-bold text-3xl text-primary">2026</p>
+<p class="text-sm text-on-surface-variant mt-1">The year we changed the delivery paradigm forever.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission: Bold & Tonal -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-5xl mx-auto text-center">
+<h2 class="text-primary text-sm font-bold tracking-widest uppercase mb-8">Our Mission</h2>
+<div class="relative">
+<span class="material-symbols-outlined text-9xl text-primary/10 absolute -top-12 left-1/2 -translate-x-1/2 select-none" data-icon="format_quote">format_quote</span>
+<blockquote class="text-3xl md:text-5xl font-headline font-bold text-on-surface leading-tight relative z-10">
+                        To democratize global logistics by empowering everyday travelers to become the world’s most efficient delivery network.
+                    </blockquote>
+</div>
+<div class="mt-16 grid md:grid-cols-3 gap-12 text-left">
+<div class="p-8 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="travel_explore">travel_explore</span>
+<h3 class="text-xl font-headline font-bold mb-3">Empowerment</h3>
+<p class="text-on-surface-variant text-sm">Giving travelers a way to offset costs and monetize their spare capacity.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="speed">speed</span>
+<h3 class="text-xl font-headline font-bold mb-3">Velocity</h3>
+<p class="text-on-surface-variant text-sm">Accelerating peer-to-peer delivery with zero carbon footprint addition.</p>
+</div>
+<div class="p-8 bg-surface-container-lowest rounded-xl">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="shield_with_heart">shield_with_heart</span>
+<h3 class="text-xl font-headline font-bold mb-3">Trust</h3>
+<p class="text-on-surface-variant text-sm">Building a community-vetted ecosystem where safety is the cornerstone.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- The Visionaries: Bento Grid -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tighter">The Visionaries</h2>
+<p class="text-on-surface-variant mt-6 text-lg">Meet the minds behind Paverasa Pvt Ltd, driving the future of travel-logistics.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- P. Pavan -->
+<div class="md:col-span-2 group">
+<div class="relative rounded-xl overflow-hidden h-[450px] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Professional portrait of a confident male founder in a modern tech office setting, soft professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz7ACyAVWpBv7UENbpcpUGzvU9Kr0fo95YaOqsIVbQtYlKbgUogFGyxDeto0VUIFoGOrNrSeYbiFj5J7HgC4E4zhF_Qjasjg7ZCJAZosJ_zQZ97-VvphUFNPiNMDYl2S2tTSVB37EMHRokoVBTQpPw6rPmbNJqjYKuV_HdSvRNrqgx_5e-dmans0X0BmaOyCUcSEGZArFqpMV8gaU74rXW_96qXuZozCzSeQRqEwuRlUaATzcOdFttXWoxpEEe_FSGZDWRg1NCsFc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<h3 class="text-white text-3xl font-headline font-bold">P. Pavan</h3>
+<p class="text-primary-fixed font-bold text-sm tracking-wider uppercase mt-2">Chief Executive Officer</p>
+<p class="text-white/70 mt-4 text-sm max-w-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    Strategic lead and dreamer, Pavan's focus is on the long-term scalability of the Picsi Drop ecosystem.
+                                </p>
+</div>
+</div>
+</div>
+<!-- V. Aravind -->
+<div class="group">
+<div class="relative rounded-xl overflow-hidden h-[450px] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Editorial portrait of a young male professional in a creative studio, looking thoughtful with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_hjQlywigC388vdYAGC-QfuCONAam2U1s_HDmkQtu8yfOWflEY6mSy3GoiN9NvdVXJJcnaSFOux9q-Jfn4b4842DQiapOuljticQWk8aG2DarO1QR9Ms3lIbLi7Yuvd0VUHvFEj-ZmWdd0ghM3SbEEtnmkHNkw0390gMg6ENtlYh5QaKwMDUfwrD1dwqAA8W5_pWP-MkUwyHjvOkY9LekI3EbnDoaxyanC4KVXKjaW5y5zIiYt8y6KeI1Nf4a3aA_MfmJPZNRtwo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white text-xl font-headline font-bold">V. Aravind</h3>
+<p class="text-primary-fixed font-bold text-xs tracking-wider uppercase mt-1">Operations Lead</p>
+</div>
+</div>
+</div>
+<!-- G. Rakesh -->
+<div class="group">
+<div class="relative rounded-xl overflow-hidden h-[450px] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Portrait of a male technologist in a high-tech lab environment, focused expression, cool tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRHEWX9avqvg51q1gLWsuCYaglN0CP0o2BweCtufuTD9r1QI3E4VsQZGuUh0yhvEosVHCR0VGDyOduPxh6nyQ8mdJVofa6YlVdJtCaJrMy_vs8b3eYMot3OxcruqrX79IxiNLBMoTQWX4W8E04Bo3kkZdQ_Y7PnHteikUm-yNjO7asDRkh0OsJp1S425wkjhNMmCo9AwDpXHt0fhEWSNcv0TNOzYonFE0WKlyubw30mL1Jl9GzhK45OE37Hw4YT8GsgyX-VePA7J8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white text-xl font-headline font-bold">G. Rakesh</h3>
+<p class="text-primary-fixed font-bold text-xs tracking-wider uppercase mt-1">Product Architect</p>
+</div>
+</div>
+</div>
+<!-- P. Sai Medh -->
+<div class="md:col-span-4 group mt-2">
+<div class="relative rounded-xl overflow-hidden h-[300px] bg-surface-container flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/3 h-full">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close-up professional portrait of a male leader, smiling warmly with a natural soft-focus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFrloNVlnwitC6jfWto2KrPybKez9EfsLAfvDB088EoS6OW30OzEKXxGkFDRknmbtvYzxvgjkPFfZ6jx7Ih-T67X3RvqP67nmOlYk_VRwbxVJWfAPTLMAKXhijfA1w2zeuqdgSrvVGhgt5CMd7IgcBPaa5tkzxxlymh8M_Exw35N2bdT53nB-Xr-cnzYil-bfUVX6QfULSO_l4VtK4qOAGC-lG7L5iJKg-MtgEY58NRlbyAhh5q0ShfgXUEN1EluVIVE17SGiKeTA"/>
+</div>
+<div class="w-full md:w-2/3 p-12 bg-surface-container-highest h-full flex flex-col justify-center">
+<h3 class="text-on-surface text-4xl font-headline font-bold">P. Sai Medh</h3>
+<p class="text-primary font-bold text-sm tracking-wider uppercase mt-2 mb-6">Technical Director</p>
+<p class="text-on-surface-variant max-w-xl">
+                                    The engine room of Picsi Drop. Sai oversees the complex matching algorithms that make our platform seamless and secure for every user across the globe.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Milestones: Creative Timeline -->
+<section class="bg-surface py-32 px-8 overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col items-center text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tighter">Our Milestones</h2>
+<div class="h-1.5 w-24 bg-primary mt-6 rounded-full"></div>
+</div>
+<div class="relative grid md:grid-cols-4 gap-4">
+<!-- Milestone 1 -->
+<div class="relative p-10 bg-surface-container-lowest rounded-xl editorial-shadow">
+<div class="text-primary font-headline font-black text-6xl opacity-20 absolute top-4 right-6 select-none">01</div>
+<h4 class="font-headline font-bold text-xl mb-4">Inception</h4>
+<p class="text-on-surface-variant text-sm">Founded under Paverasa Pvt Ltd with a vision to connect travelers and shippers globally.</p>
+<p class="mt-8 text-primary font-bold text-xs uppercase tracking-widest">Q1 2024</p>
+</div>
+<!-- Milestone 2 -->
+<div class="relative p-10 bg-surface-container-lowest rounded-xl editorial-shadow translate-y-12">
+<div class="text-primary font-headline font-black text-6xl opacity-20 absolute top-4 right-6 select-none">02</div>
+<h4 class="font-headline font-bold text-xl mb-4">Beta Launch</h4>
+<p class="text-on-surface-variant text-sm">Successfully completed our first 1,000 cross-border deliveries across Asia.</p>
+<p class="mt-8 text-primary font-bold text-xs uppercase tracking-widest">Q3 2024</p>
+</div>
+<!-- Milestone 3 -->
+<div class="relative p-10 bg-surface-container-lowest rounded-xl editorial-shadow">
+<div class="text-primary font-headline font-black text-6xl opacity-20 absolute top-4 right-6 select-none">03</div>
+<h4 class="font-headline font-bold text-xl mb-4">Series A</h4>
+<p class="text-on-surface-variant text-sm">Expansion into European markets and the launch of the 'Picsi Trust' verification system.</p>
+<p class="mt-8 text-primary font-bold text-xs uppercase tracking-widest">Q2 2025</p>
+</div>
+<!-- Milestone 4 -->
+<div class="relative p-10 bg-surface-container-lowest rounded-xl editorial-shadow translate-y-12">
+<div class="text-primary font-headline font-black text-6xl opacity-20 absolute top-4 right-6 select-none">04</div>
+<h4 class="font-headline font-bold text-xl mb-4">The Platform</h4>
+<p class="text-on-surface-variant text-sm">Reaching 500k active travelers and becoming the #1 peer-to-peer delivery app.</p>
+<p class="mt-8 text-primary font-bold text-xs uppercase tracking-widest">Today</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Join Movement: High Impact CTA -->
+<section class="py-32 px-8">
+<div class="max-w-7xl mx-auto rounded-[2rem] bg-on-surface overflow-hidden relative p-12 md:p-24 text-center">
+<!-- Background decorative elements -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-20 blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-fixed opacity-10 blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+<div class="relative z-10">
+<h2 class="text-white text-5xl md:text-7xl font-headline font-extrabold tracking-tighter mb-8 max-w-3xl mx-auto">
+                        Ready to join the logistics revolution?
+                    </h2>
+<p class="text-white/60 text-lg md:text-xl mb-12 max-w-xl mx-auto">
+                        Whether you're exploring the world or sending a piece of it home, Picsi Drop makes it possible.
+                    </p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="w-full md:w-auto bg-primary-container text-on-primary-fixed font-bold py-5 px-12 rounded-full text-lg hover:scale-[1.05] active:scale-95 transition-all">
+                            Start Shipping
+                        </button>
+<button class="w-full md:w-auto bg-transparent border-2 border-white/20 text-white font-bold py-5 px-12 rounded-full text-lg hover:bg-white/10 transition-all">
+                            Become a Traveler
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-zinc-100 dark:bg-zinc-950 w-full py-12">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6 font-['Manrope'] text-sm">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-black text-zinc-900 dark:text-zinc-50">Picsi Drop</span>
+<p class="text-zinc-500 dark:text-zinc-400">2026 Paverasa Pvt Ltd</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Features</a>
+<a class="text-orange-600 font-medium hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">About</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

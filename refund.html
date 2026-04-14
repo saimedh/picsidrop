@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(246, 246, 246, 0.8);
+            backdrop-filter: blur(24px);
+        }
+        /* Policies Dropdown */
+        .policies-dropdown { position: relative; }
+        .policies-menu {
+            position: absolute; top: calc(100% + 12px); left: 50%;
+            transform: translateX(-50%) scaleY(0.95);
+            transform-origin: top;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 1rem;
+            padding: 0.5rem;
+            min-width: 210px;
+            box-shadow: 0 20px 40px rgba(47,47,47,0.12);
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .policies-dropdown:hover .policies-menu,
+        .policies-dropdown:focus-within .policies-menu {
+            opacity: 1; pointer-events: auto;
+            transform: translateX(-50%) scaleY(1);
+        }
+        .policies-menu a {
+            display: flex; align-items: center; gap: 10px;
+            padding: 0.65rem 1rem;
+            border-radius: 0.6rem;
+            font-size: 0.875rem; font-weight: 600;
+            color: #5b5b5b; text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+        .policies-menu a:hover { background: #fff3ec; color: #9b3f00; }
+        .policies-menu a.active { background: #fff3ec; color: #9b3f00; font-weight: 700; }
+        .policies-menu a .material-symbols-outlined { font-size: 18px; }
+    </style>
+    <link href="output.css" rel="stylesheet" />
+    <link href="data:," rel="icon">
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Floating Pill Navigation -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1000px] bg-white/70 dark:bg-neutral-900/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 hover:shadow-[0_16px_48px_rgba(244,105,6,0.15)] hover:border-[#F46906]/30">
+    <a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F46906] to-[#ffc5a3] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+        </div>
+        Picsi Drop
+    </a>
+    
+    <div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="about.html">About</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
+        
+        
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+                Process <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="sender.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
+                </a>
+                <a href="traveler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
+                </a>
+            </div>
+        </div>
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-[#F46906] transition-colors focus:outline-none py-2">
+                Policies <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="terms.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
+                </a>
+                <a href="refund.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#fff3ec] text-[#F46906] font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
+                </a>
+                <a href="privacy.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
+                </a>
+            </div>
+        </div>
+        
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="partnerships.html">Partnerships</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <!-- Seamless Dark Mode Toggle -->
+        <button onclick="document.documentElement.classList.toggle('dark')" class="relative w-11 h-11 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-md border border-transparent hover:border-[#F46906]/30 dark:hover:border-[#F46906]/50 shadow-sm hover:shadow-[0_0_15px_rgba(244,105,6,0.2)] transition-all duration-500 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#F46906]/50">
+            <!-- Pulsing ring effect on hover -->
+            <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F46906]/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out origin-center pointer-events-none"></span>
+            
+            <div class="relative w-6 h-6 flex items-center justify-center pointer-events-none">
+                <!-- Moon icon for light mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-neutral-700 group-hover:rotate-[360deg] dark:opacity-0 dark:-rotate-90 dark:scale-0">dark_mode</span>
+                <!-- Sun icon for dark mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-amber-400 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100 group-hover:rotate-[360deg]">light_mode</span>
+            </div>
+        </button>
+        <a href="index.html" class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)] hover:shadow-[0_12px_24px_rgba(244,105,6,0.4)]">
+            Get Started
+        </a>
+    </div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-6 md:px-12 pt-20">
+<!-- Hero Header -->
+<header class="mb-24 max-w-4xl">
+<span class="bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase mb-6 inline-block">Policy Framework</span>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-on-surface tracking-tighter leading-[0.9] mb-8">
+                Refund <br/><span class="text-primary italic">Policy</span>
+</h1>
+<p class="text-xl text-on-surface-variant font-body max-w-2xl leading-relaxed">
+                We believe in a creative partnership built on trust. Our refund policy is designed to be as vibrant and transparent as our work, ensuring you feel confident in every drop.
+            </p>
+</header>
+<!-- Policy Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+<!-- Sticky Sidebar Navigation -->
+<aside class="lg:col-span-3 sticky top-32 hidden lg:block">
+<nav class="flex flex-col gap-6 text-sm font-label font-semibold uppercase tracking-wider">
+<a class="text-primary flex items-center gap-3" href="#eligibility">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                        Eligibility
+                    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#process">
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+                        Process
+                    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#timelines">
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+                        Timelines
+                    </a>
+<a class="text-on-surface-variant hover:text-primary transition-colors flex items-center gap-3" href="#exceptions">
+<span class="w-2 h-2 rounded-full bg-surface-container-high"></span>
+                        Exceptions
+                    </a>
+</nav>
+</aside>
+<!-- Main Document Body -->
+<div class="lg:col-span-9 space-y-24">
+<!-- Section 1: Eligibility -->
+<section class="bg-surface-container-lowest p-10 md:p-16 rounded-[3rem] shadow-[0_20px_40px_rgba(47,47,47,0.06)]" id="eligibility">
+<div class="flex items-start gap-8 flex-col md:flex-row">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-container text-3xl">verified_user</span>
+</div>
+<div>
+<h2 class="text-3xl font-headline font-bold mb-6 text-on-surface">Conditions for Refund</h2>
+<div class="space-y-6 text-lg text-on-surface-variant leading-relaxed">
+<p>At Picsi Drop, we strive for chromatic excellence. Refunds are considered under the following conditions:</p>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<span class="text-primary font-bold">01.</span>
+<span>Project cancellation requested within 48 hours of the initial deposit and before any creative direction has commenced.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-primary font-bold">02.</span>
+<span>Technical failure on our platform that prevents the delivery of final curated assets after all troubleshooting attempts.</span>
+</li>
+<li class="flex gap-4">
+<span class="text-primary font-bold">03.</span>
+<span>Failure to initiate a project within the agreed-upon timeline specified in your initial brief.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Process (Asymmetric Bento) -->
+<section class="space-y-8" id="process">
+<h2 class="text-4xl font-headline font-bold text-on-surface px-4">The Request Flow</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-12 rounded-[2.5rem] flex flex-col justify-between aspect-square">
+<span class="text-5xl font-headline font-extrabold text-outline-variant/30">01</span>
+<div>
+<h3 class="text-2xl font-bold mb-4">Submission</h3>
+<p class="text-on-surface-variant">Send an email to support@picsidrop.com with your project ID and the specific reason for your request. We value honest feedback.</p>
+</div>
+</div>
+<div class="bg-primary text-on-primary p-12 rounded-[2.5rem] flex flex-col justify-between aspect-square md:mt-12">
+<span class="text-5xl font-headline font-extrabold text-on-primary/20">02</span>
+<div>
+<h3 class="text-2xl font-bold mb-4">Review</h3>
+<p class="text-on-primary/80">Our Chromatic Curator team will review your request against the project milestones reached. This takes roughly 3 business days.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Timelines -->
+<section class="bg-surface-container-high/50 p-10 md:p-16 rounded-[3rem]" id="timelines">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<h2 class="text-3xl font-headline font-bold mb-6 text-on-surface">Processing Times</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed">
+                                Once approved, your refund is initiated immediately. However, the time it takes for funds to reflect in your account depends on your financial institution.
+                            </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-2xl text-center">
+<span class="block text-3xl font-headline font-bold text-primary">5-7</span>
+<span class="text-xs uppercase font-bold tracking-widest text-on-surface-variant">Business Days</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-2xl text-center">
+<span class="block text-3xl font-headline font-bold text-primary">100%</span>
+<span class="text-xs uppercase font-bold tracking-widest text-on-surface-variant">Transparency</span>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 w-full h-[300px] rounded-3xl overflow-hidden shadow-2xl rotate-2">
+<img alt="Modern minimalist aesthetic" class="w-full h-full object-cover" data-alt="Close-up of a high-end metal bank card resting on a pristine white marble surface with soft, diffused morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrBSIUF9iqqE2p8Qri1LWU57xi9NfVIvoSc5bbHxO2chwQkCZ0--ZKabHP7-EWyJYev5H1yvSY9KLuCpTGaaEnRfEguq9tKTMwQI4cwzy8FTZ26Xw0PUF85J9gjGg70DPIOCkYUAvaagZJOFkmqyaghegvXXbV5u2MEDu8m59FE8fYFeIQzvcJj6x4ijNbeVrW05GzuotS1o1IYENLj8C9om-q0VNxlRoV-RP_yEX4VzcEPFxdT_B26eZQZhPHXIeUGinV2-9X16g"/>
+</div>
+</div>
+</section>
+<!-- Section 4: Exceptions -->
+<section class="border-l-4 border-primary px-8 md:px-16 py-8" id="exceptions">
+<h2 class="text-3xl font-headline font-bold mb-8 text-on-surface">Non-Refundable Items</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-primary">Custom Assets</h4>
+<p class="text-sm text-on-surface-variant">Assets that have been fully curated, delivered, and downloaded by the client.</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-primary">Late Requests</h4>
+<p class="text-sm text-on-surface-variant">Any requests made after the 30-day window from the date of original transaction.</p>
+</div>
+<div class="space-y-2">
+<h4 class="font-headline font-bold text-primary">Styling Fees</h4>
+<p class="text-sm text-on-surface-variant">Consultation fees for creative discovery sessions that have already taken place.</p>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Contact CTA -->
+<section class="mt-40 bg-surface-container-low rounded-[4rem] p-12 md:p-24 text-center overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-6 tracking-tight">Still have <span class="text-primary italic">questions?</span></h2>
+<p class="text-on-surface-variant max-w-xl mx-auto mb-10 text-lg">Our support team is here to guide you through the process and ensure a smooth experience.</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<button class="bg-primary text-on-primary px-10 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl">Contact Support</button>
+<button class="text-primary font-bold border-b-2 border-primary/20 hover:border-primary transition-all pb-1">View Full Terms</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#f1f1f1] w-full rounded-t-[3rem] mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-[1440px] mx-auto px-12 py-24 font-['Manrope'] text-sm tracking-wide">
+<div class="space-y-6">
+<div class="text-xl font-bold tracking-tighter text-neutral-800">Picsi Drop</div>
+<p class="text-neutral-500 leading-relaxed max-w-[200px]">Empowering creators through intentional curation and vibrant digital experiences.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-neutral-800 uppercase tracking-widest text-[10px]">Navigate</h4>
+<ul class="space-y-4 text-neutral-500">
+<li><a class="hover:text-[#9b3f00] transition-colors" href="index.html">Home</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="about.html">About Us</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="features.html">Features</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-neutral-800 uppercase tracking-widest text-[10px]">Legal</h4>
+<ul class="space-y-4 text-neutral-500">
+<li><a class="text-[#9b3f00] font-semibold" href="refund.html">Refund Policy</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="privacy.html">Privacy Policy</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="terms.html">Terms &amp; Conditions</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-bold text-neutral-800 uppercase tracking-widest text-[10px]">Connect</h4>
+<ul class="space-y-4 text-neutral-500">
+<li><a class="hover:text-[#9b3f00] transition-colors" href="#">Instagram</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="#">LinkedIn</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="#">Behance</a></li>
+<li><a class="hover:text-[#9b3f00] transition-colors" href="#">Dribbble</a></li>
+</ul>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 pb-12 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-neutral-200 pt-12 text-neutral-400">
+<p>© 2024 Picsi Drop. The Chromatic Curator.</p>
+<p class="flex items-center gap-2">Crafted with <span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span> in San Francisco</p>
+</div>
+</footer>
+</body></html>

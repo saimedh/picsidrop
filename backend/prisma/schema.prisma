@@ -1,0 +1,111 @@
+// ╔══════════════════════════════════════════════════╗
+// ║        Picsi Drop – Prisma Schema                ║
+// ║        Provider: SQLite (local dev)              ║
+// ║        Switch to postgresql for production       ║
+// ╚══════════════════════════════════════════════════╝
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ─── MODELS ──────────────────────────────────────────
+// Note: SQLite does not support native enums.
+// Enum values are stored as plain Strings.
+// Valid values are documented in comments per field.
+
+/// Platform users (senders and travelers).
+model User {
+  id         String   @id @default(cuid())
+  name       String
+  email      String   @unique
+  phone      String?
+  /// "SENDER" | "TRAVELER" | "ADMIN"
+  role       String   @default("SENDER")
+  isVerified Boolean  @default(false)
+  avatarUrl  String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  sentDeliveries     Delivery[] @relation("SenderDeliveries")
+  traveledDeliveries Delivery[] @relation("TravelerDeliveries")
+
+  @@map("users")
+}
+
+/// A delivery request created by a sender and fulfilled by a traveler.
+model Delivery {
+  id             String    @id @default(cuid())
+  senderId       String
+  travelerId     String?
+  pickupAddress  String
+  dropoffAddress String
+  pickupCity     String
+  dropoffCity    String
+  weight         Float
+  dimensions     String?
+  description    String?
+  estimatedPrice Float
+  finalPrice     Float?
+  /// "PENDING" | "MATCHED" | "IN_TRANSIT" | "DELIVERED" | "CANCELLED" | "DISPUTED"
+  status         String    @default("PENDING")
+  startOtp       String?
+  endOtp         String?
+  pickupAt       DateTime?
+  deliveredAt    DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  sender   User  @relation("SenderDeliveries",  fields: [senderId],   references: [id])
+  traveler User? @relation("TravelerDeliveries", fields: [travelerId], references: [id])
+
+  @@map("deliveries")
+}
+
+/// Contact form submissions from the website.
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  isRead    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@map("contact_submissions")
+}
+
+/// Newsletter subscriber list.
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  isActive     Boolean  @default(true)
+  subscribedAt DateTime @default(now())
+
+  @@map("newsletter_subscribers")
+}
+
+/// Partnership inquiries submitted via partnerships.html.
+model PartnershipInquiry {
+  id              String    @id @default(cuid())
+  orgName         String
+  /// "UNIVERSITY" | "SME" | "ENTERPRISE" | "LOGISTICS" | "NGO" | "TECH" | "OTHER"
+  orgType         String    @default("OTHER")
+  contactName     String
+  email           String
+  phone           String?
+  /// "UNIVERSITY_CAMPUS" | "SME_MERCHANT" | "ENTERPRISE_LOGISTICS" | "FLEET_NETWORK" | "NGO_SOCIAL" | "API_TECH" | "OTHER"
+  partnershipType String    @default("OTHER")
+  message         String
+  /// "PENDING" | "UNDER_REVIEW" | "APPROVED" | "REJECTED"
+  status          String    @default("PENDING")
+  reviewNotes     String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("partnership_inquiries")
+}

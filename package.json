@@ -1,0 +1,25 @@
+{
+  "name": "picsi-drop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./input.css -o ./output.css",
+    "dev": "tailwindcss -i ./input.css -o ./output.css --watch",
+    "serve": "serve . -p 3000 --no-clipboard",
+    "start": "concurrently --names \"CSS,BACKEND,FRONTEND,SITE\" --prefix-colors \"cyan,yellow,green,magenta\" \"npm run dev\" \"node backend/server.js\" \"npx --prefix frontend vite\" \"npm run serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.11",
+    "concurrently": "^9.2.1",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.2.2"
+  }
+}

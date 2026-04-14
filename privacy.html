@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Privacy Policy | Picsi Drop</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        /* Policies Dropdown */
+        .policies-dropdown { position: relative; }
+        .policies-menu {
+            position: absolute; top: calc(100% + 12px); left: 50%;
+            transform: translateX(-50%) scaleY(0.95);
+            transform-origin: top;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 1rem;
+            padding: 0.5rem;
+            min-width: 210px;
+            box-shadow: 0 20px 40px rgba(47,47,47,0.12);
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .policies-dropdown:hover .policies-menu,
+        .policies-dropdown:focus-within .policies-menu {
+            opacity: 1; pointer-events: auto;
+            transform: translateX(-50%) scaleY(1);
+        }
+        .policies-menu a {
+            display: flex; align-items: center; gap: 10px;
+            padding: 0.65rem 1rem;
+            border-radius: 0.6rem;
+            font-size: 0.875rem; font-weight: 600;
+            color: #5b5b5b; text-decoration: none;
+            transition: background 0.15s, color 0.15s;
+        }
+        .policies-menu a:hover { background: #fff3ec; color: #9b3f00; }
+        .policies-menu a.active { background: #fff3ec; color: #9b3f00; font-weight: 700; }
+        .policies-menu a .material-symbols-outlined { font-size: 18px; }
+    </style>
+    <link href="output.css" rel="stylesheet" />
+    <link href="data:," rel="icon">
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<!-- Floating Pill Navigation -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1000px] bg-white/70 dark:bg-neutral-900/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 hover:shadow-[0_16px_48px_rgba(244,105,6,0.15)] hover:border-[#F46906]/30">
+    <a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html">
+        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F46906] to-[#ffc5a3] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
+            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
+        </div>
+        Picsi Drop
+    </a>
+    
+    <div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="about.html">About</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
+        
+        
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+                Process <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="sender.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
+                </a>
+                <a href="traveler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
+                </a>
+            </div>
+        </div>
+        <div class="relative group">
+            <button class="flex items-center gap-1 text-[#F46906] transition-colors focus:outline-none py-2">
+                Policies <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+                <a href="terms.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
+                </a>
+                <a href="refund.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
+                </a>
+                <a href="privacy.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#fff3ec] text-[#F46906] font-semibold transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
+                </a>
+            </div>
+        </div>
+        
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="partnerships.html">Partnerships</a>
+        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-4">
+        <!-- Seamless Dark Mode Toggle -->
+        <button onclick="document.documentElement.classList.toggle('dark')" class="relative w-11 h-11 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-md border border-transparent hover:border-[#F46906]/30 dark:hover:border-[#F46906]/50 shadow-sm hover:shadow-[0_0_15px_rgba(244,105,6,0.2)] transition-all duration-500 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#F46906]/50">
+            <!-- Pulsing ring effect on hover -->
+            <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F46906]/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out origin-center pointer-events-none"></span>
+            
+            <div class="relative w-6 h-6 flex items-center justify-center pointer-events-none">
+                <!-- Moon icon for light mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-neutral-700 group-hover:rotate-[360deg] dark:opacity-0 dark:-rotate-90 dark:scale-0">dark_mode</span>
+                <!-- Sun icon for dark mode -->
+                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-amber-400 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100 group-hover:rotate-[360deg]">light_mode</span>
+            </div>
+        </button>
+        <a href="index.html" class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)] hover:shadow-[0_12px_24px_rgba(244,105,6,0.4)]">
+            Get Started
+        </a>
+    </div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-6 md:px-12 pt-20">
+<!-- Hero Section -->
+<section class="mb-24">
+<div class="flex flex-col md:flex-row gap-16 items-end">
+<div class="flex-1">
+<span class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-6">Security First</span>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter text-on-surface leading-[0.9] mb-8">
+                        Privacy <br/><span class="text-primary italic">Manifesto.</span>
+</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                        Your creativity is personal. Your data should be too. We’ve designed Picsi Drop to be a transparent vault for your digital assets. No hidden tracking, just pure curation.
+                    </p>
+</div>
+<div class="hidden md:block w-72 h-72 bg-surface-container-low rounded-xl relative overflow-hidden rotate-3">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
+<div class="p-8 flex flex-col justify-end h-full">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">shield_with_heart</span>
+<p class="text-sm font-bold text-on-surface leading-tight">Committed to GDPR and CCPA standards since day one.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid for Policy Chapters -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+<!-- Sidebar Navigation (Desktop Only) -->
+<aside class="hidden md:block md:col-span-3 sticky top-32 h-fit space-y-4">
+<nav class="flex flex-col gap-2">
+<a class="p-4 rounded-xl text-primary font-bold bg-surface-container-lowest transition-all hover:translate-x-2" href="#collection">1. Data Collection</a>
+<a class="p-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container-low transition-all hover:translate-x-2" href="#usage">2. Usage Rights</a>
+<a class="p-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container-low transition-all hover:translate-x-2" href="#storage">3. Storage &amp; Safety</a>
+<a class="p-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container-low transition-all hover:translate-x-2" href="#sharing">4. Third Parties</a>
+<a class="p-4 rounded-xl text-on-surface-variant font-medium hover:bg-surface-container-low transition-all hover:translate-x-2" href="#rights">5. Your Rights</a>
+</nav>
+<div class="p-6 bg-primary text-on-primary rounded-xl mt-8">
+<p class="text-sm font-medium mb-4">Have questions regarding your personal data?</p>
+<a class="text-xs uppercase font-extrabold tracking-widest bg-black/20 py-2 px-4 rounded-full inline-block" href="mailto:privacy@picsidrop.com">Contact DPO</a>
+</div>
+</aside>
+<!-- Main Content Sections -->
+<div class="md:col-span-9 space-y-24">
+<!-- Section 1 -->
+<section class="bg-surface-container-lowest p-10 md:p-16 rounded-[2.5rem]" id="collection">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-4xl font-black text-surface-container-highest tracking-tighter">01</span>
+<h2 class="text-4xl font-bold tracking-tight">Information We Collect</h2>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="space-y-6">
+<p class="text-on-surface-variant leading-relaxed">
+                                We collect information that you provide directly to us when you create an account, upload assets, or communicate with our support team.
+                            </p>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">person</span>
+<div>
+<p class="font-bold">Identity Data</p>
+<p class="text-sm text-on-surface-variant">Name, username, and profile image.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<div>
+<p class="font-bold">Contact Data</p>
+<p class="text-sm text-on-surface-variant">Email address and billing details.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 border-l-4 border-primary">
+<h3 class="font-bold mb-4">Automatic Collection</h3>
+<p class="text-sm text-on-surface-variant mb-4">When you access Picsi Drop, we automatically record:</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant">IP Address</span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant">Device Type</span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant">Log Files</span>
+<span class="bg-surface-container-lowest px-3 py-1 rounded-full text-xs font-bold text-on-surface-variant">Browser Settings</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2 -->
+<section class="space-y-12" id="usage">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-4xl font-black text-surface-container-high tracking-tighter">02</span>
+<h2 class="text-4xl font-bold tracking-tight">How We Use Your Data</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="bg-surface-container-low p-8 rounded-2xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<h3 class="font-bold mb-2">Service Delivery</h3>
+<p class="text-sm text-on-surface-variant">To manage your account, provide access to your gallery, and process transactions.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<h3 class="font-bold mb-2">Internal Analytics</h3>
+<p class="text-sm text-on-surface-variant">To understand how users interact with our curator tools and improve the UI/UX.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-2xl hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-primary mb-4" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h3 class="font-bold mb-2">Security</h3>
+<p class="text-sm text-on-surface-variant">To detect, prevent, and address technical issues or fraudulent activities.</p>
+</div>
+</div>
+<div class="p-10 bg-on-surface text-surface rounded-3xl relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+<h3 class="text-2xl font-bold mb-4">A Note on AI and Training</h3>
+<p class="text-surface-dim leading-relaxed max-w-2xl">
+                            Picsi Drop <span class="text-primary-fixed font-bold">does not</span> use your private uploads, project drafts, or personal creative assets to train third-party generative AI models without your explicit, opt-in consent.
+                        </p>
+</div>
+</section>
+<!-- Section 3 -->
+<section class="bg-surface-container-low rounded-[2.5rem] p-12 overflow-hidden relative" id="storage">
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="flex-1 space-y-6">
+<div class="flex items-center gap-4">
+<span class="text-4xl font-black text-surface-container-highest tracking-tighter">03</span>
+<h2 class="text-4xl font-bold tracking-tight">Data Storage &amp; Safety</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                                We utilize industry-standard encryption protocols (AES-256) for all data at rest and TLS for data in transit. Your content is hosted on Tier-4 data centers with 99.9% uptime and physical security.
+                            </p>
+<div class="flex gap-4">
+<div class="bg-surface px-6 py-4 rounded-xl text-center flex-1">
+<p class="text-2xl font-black text-primary">256-bit</p>
+<p class="text-[10px] uppercase font-extrabold tracking-widest text-on-surface-variant">Encryption</p>
+</div>
+<div class="bg-surface px-6 py-4 rounded-xl text-center flex-1">
+<p class="text-2xl font-black text-primary">Zero</p>
+<p class="text-[10px] uppercase font-extrabold tracking-widest text-on-surface-variant">Knowledge Architecture</p>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/3 aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<img alt="Server infrastructure" class="w-full h-full object-cover" data-alt="close-up of a modern high-tech server rack with glowing blue and orange indicator lights in a dark data center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYDrZsivNmuZQL_TfRQTGRtYSVRr_D0vXcn3VAp0Vy2DUCDqODDm6vCQ37ZFbOptOXyg3rMqK2IWigu3jIUyedh02Zjg7SUkRbeF7atjtgVK6n07whqsPL-Wk0nX6sEDfVBhxPahuuCXW209-LUjwvzFABd34Fgh4rwN21MkWjQzc-BValX2K2fMZOoW0gE8XV6u__AeM8Dr9L018MlEUNVheOUeOq7voeCycN259xW7Zp-gAp-rsjloG96HVIhIkeiGe2CUvQfgY"/>
+</div>
+</div>
+</section>
+<!-- Section 4 -->
+<section class="space-y-8" id="sharing">
+<div class="flex items-center gap-4">
+<span class="text-4xl font-black text-surface-container-high tracking-tighter">04</span>
+<h2 class="text-4xl font-bold tracking-tight">Third-Party Disclosure</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed max-w-3xl">
+                        We do not sell, trade, or otherwise transfer your Personally Identifiable Information to outside parties. This does not include trusted third parties who assist us in operating our website (e.g., Stripe for payments, AWS for hosting), so long as those parties agree to keep this information confidential.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="border border-outline-variant/20 p-6 rounded-xl flex justify-between items-center">
+<span class="font-bold">Payment Processing</span>
+<span class="text-xs bg-surface-container-high px-3 py-1 rounded-full uppercase font-bold">Stripe</span>
+</div>
+<div class="border border-outline-variant/20 p-6 rounded-xl flex justify-between items-center">
+<span class="font-bold">Cloud Infrastructure</span>
+<span class="text-xs bg-surface-container-high px-3 py-1 rounded-full uppercase font-bold">AWS</span>
+</div>
+<div class="border border-outline-variant/20 p-6 rounded-xl flex justify-between items-center">
+<span class="font-bold">Email Communication</span>
+<span class="text-xs bg-surface-container-high px-3 py-1 rounded-full uppercase font-bold">Postmark</span>
+</div>
+<div class="border border-outline-variant/20 p-6 rounded-xl flex justify-between items-center">
+<span class="font-bold">Analytics</span>
+<span class="text-xs bg-surface-container-high px-3 py-1 rounded-full uppercase font-bold">Plausible</span>
+</div>
+</div>
+</section>
+<!-- Section 5 -->
+<section class="bg-primary-container/10 p-10 md:p-16 rounded-[2.5rem]" id="rights">
+<div class="flex items-center gap-4 mb-8">
+<span class="text-4xl font-black text-primary/20 tracking-tighter">05</span>
+<h2 class="text-4xl font-bold tracking-tight">Your Rights &amp; Control</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-6">
+<p class="text-on-surface-variant">You have full control over your digital footprint. At any time, you can access our "Data Control Center" in your settings to:</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="font-medium">Request a portable copy of your data</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="font-medium">Correct inaccuracies in your profile</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
+<span class="font-medium">Request permanent deletion (The "Right to be Forgotten")</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm">
+<h3 class="font-bold mb-4">Cookie Policy</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">
+                                We use strictly necessary cookies to keep you logged in and functional cookies to remember your display preferences. We do not use advertising or tracking cookies.
+                            </p>
+<button class="w-full py-3 bg-on-surface text-surface rounded-xl font-bold hover:bg-primary transition-colors">Manage Preferences</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-24 bg-[#f1f1f1] dark:bg-neutral-800">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-[1440px] mx-auto px-12 py-24 font-['Manrope'] text-sm tracking-wide">
+<div class="space-y-6">
+<div class="text-xl font-bold tracking-tighter text-neutral-800 dark:text-neutral-100">Picsi Drop</div>
+<p class="text-neutral-500 dark:text-neutral-400 max-w-xs leading-relaxed">The Chromatic Curator. Elevating your digital assets into a curated editorial experience.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-neutral-800 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Product</h4>
+<div class="flex flex-col gap-3">
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">Showcase</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">Curator AI</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">Cloud Vault</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-neutral-800 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Social</h4>
+<div class="flex flex-col gap-3">
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">Instagram</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">LinkedIn</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="#">Behance</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-neutral-800 dark:text-neutral-100 uppercase tracking-widest text-[10px]">Legal</h4>
+<div class="flex flex-col gap-3">
+<a class="text-[#9b3f00] font-semibold" href="privacy.html">Privacy Policy</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="terms.html">Terms &amp; Conditions</a>
+<a class="text-neutral-500 dark:text-neutral-400 hover:text-[#9b3f00] dark:hover:text-[#ff7a2c] transition-colors" href="refund.html">Refund Policy</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 pb-12 text-neutral-400 text-xs border-t border-neutral-200/50 pt-8 flex justify-between items-center">
+<p>© 2024 Picsi Drop. The Chromatic Curator.</p>
+<p>Last updated: June 15, 2024</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+
+@source "./*.html";
+@source "./index.html";
+@source "./about.html";
+@source "./features.html";
+@source "./privacy.html";
+@source "./refund.html";
+@source "./terms.html";
+
+@theme {
+  --color-surface-container-highest: #dddddd;
+  --color-on-background: #2f2f2f;
+  --color-primary-dim: #883700;
+  --color-tertiary-fixed-dim: #e7a408;
+  --color-surface-container: #e8e8e8;
+  --color-error-dim: #b92902;
+  --color-primary-container: #ff7a2c;
+  --color-on-surface: #2f2f2f;
+  --color-tertiary-fixed: #f7b21f;
+  --color-primary-fixed-dim: #f46906;
+  --color-on-secondary-fixed: #572600;
+  --color-secondary-dim: #813c00;
+  --color-secondary: #944500;
+  --color-inverse-surface: #0e0e0e;
+  --color-surface-container-high: #e2e2e2;
+  --color-on-secondary: #fff0e8;
+  --color-on-error: #ffefec;
+  --color-tertiary-dim: #6b4900;
+  --color-surface-tint: #9b3f00;
+  --color-on-primary-fixed-variant: #4f1d00;
+  --color-on-primary: #fff0ea;
+  --color-on-tertiary: #fff1df;
+  --color-outline-variant: #adadad;
+  --color-secondary-fixed: #ffc5a3;
+  --color-surface-variant: #dddddd;
+  --color-outline: #777777;
+  --color-on-primary-container: #401600;
+  --color-inverse-on-surface: #9d9d9d;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #f6f6f6;
+  --color-on-surface-variant: #5b5b5b;
+  --color-on-tertiary-fixed: #342200;
+  --color-surface-container-low: #f1f1f1;
+  --color-on-primary-fixed: #000000;
+  --color-secondary-container: #ffc5a3;
+  --color-primary: #F46906;
+  --color-error: #b02500;
+  --color-tertiary-container: #f7b21f;
+  --color-on-tertiary-container: #4f3600;
+  --color-secondary-fixed-dim: #ffb283;
+  --color-inverse-primary: #fe7013;
+  --color-background: #f6f6f6;
+  --color-on-secondary-fixed-variant: #833d00;
+  --color-surface-dim: #d4d4d4;
+  --color-error-container: #f95630;
+  --color-tertiary: #7a5400;
+  --color-on-error-container: #520c00;
+  --color-surface-bright: #f6f6f6;
+  --color-on-secondary-container: #753500;
+  --color-on-tertiary-fixed-variant: #5b3e00;
+  --color-primary-fixed: #F46906;
+
+  --radius-DEFAULT: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --font-headline: "Plus Jakarta Sans";
+  --font-body: "Manrope";
+  --font-label: "Manrope";
+}
