@@ -6,8 +6,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -48,79 +46,110 @@
         .policies-menu a.active { background: #fff3ec; color: #9b3f00; font-weight: 700; }
         .policies-menu a .material-symbols-outlined { font-size: 18px; }
     </style>
-    <link href="output.css" rel="stylesheet" />
-    <link href="data:," rel="icon">
+<link href="output.css" rel="stylesheet"/>
+<link href="data:," rel="icon"/>
+<script>
+(function() {
+    function updateNav() {
+        var hw = document.getElementById('hamburger-btn');
+        var gs = document.getElementById('get-started-btn');
+        var isMobile = window.innerWidth < 768;
+        if (hw) hw.style.display = isMobile ? 'flex' : 'none';
+        if (gs) gs.style.display = isMobile ? 'none' : 'inline-flex';
+    }
+    document.addEventListener('DOMContentLoaded', updateNav);
+    window.addEventListener('resize', updateNav);
+})();
+</script>
 </head>
 <body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
 <!-- Floating Pill Navigation -->
-<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1000px] bg-white/70 dark:bg-neutral-900/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 hover:shadow-[0_16px_48px_rgba(244,105,6,0.15)] hover:border-[#F46906]/30">
-    <a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F46906] to-[#ffc5a3] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
-            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
-        </div>
-        Picsi Drop
-    </a>
-    
-    <div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="about.html">About</a>
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
-        
-        
-        <div class="relative group">
-            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+<!-- Mobile Menu Drawer -->
+<div class="fixed top-0 left-0 right-0 bottom-0 z-[200] bg-white dark:bg-neutral-900 flex-col items-start justify-center pt-0 px-6 gap-0 hidden overflow-y-auto" id="mobile-menu">
+<div class="flex justify-between items-center w-full mb-6 pt-4">
+<a class="text-xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2" href="index.html"><img alt="PicSiDrop Logo" class="h-10 md:h-12 w-auto mix-blend-multiply dark:filter dark:invert transition-transform hover:scale-105" src="images/logo.jpg"/></a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-neutral-800 dark:text-white text-[22px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 w-full font-headline font-bold text-lg">
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="about.html"><span class="material-symbols-outlined">info</span>About</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="features.html"><span class="material-symbols-outlined">star</span>Features</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="sender.html"><span class="material-symbols-outlined">outbox</span>For Senders</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="traveler.html"><span class="material-symbols-outlined">directions_car</span>For Travelers</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="partnerships.html"><span class="material-symbols-outlined">handshake</span>Partnerships</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="index.html#contact"><span class="material-symbols-outlined">mail</span>Contact</a>
+<div class="border-t border-black/10 dark:border-white/10 pt-4 flex gap-3">
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="terms.html">Terms</a>
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="refund.html">Refund</a>
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="privacy.html">Privacy</a>
+</div>
+<a class="bg-[#F46906] text-white px-8 py-4 rounded-full font-bold text-base text-center shadow-lg mt-4" href="index.html">Get Started →</a>
+</div>
+</div>
+<script>
+function toggleMobileMenu() {
+    const m = document.getElementById('mobile-menu');
+    const isOpen = !m.classList.contains('hidden');
+    m.classList.toggle('hidden');
+    m.classList.toggle('flex');
+    document.body.classList.toggle('menu-open', !isOpen);
+}
+</script>
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-3xl border-b border-black/5 dark:border-white/10 shadow-sm px-5 md:px-12 py-3 flex items-center justify-between transition-all duration-500">
+<a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html"><img alt="PicSiDrop Logo" class="h-10 md:h-12 w-auto mix-blend-multiply dark:filter dark:invert transition-transform hover:scale-105" src="images/logo.jpg"/></a>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="about.html">About</a>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
+<div class="relative group">
+<button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
                 Process <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
-            </button>
-            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                <a href="sender.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
+</button>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="sender.html">
+<span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
                 </a>
-                <a href="traveler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="traveler.html">
+<span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
                 </a>
-            </div>
-        </div>
-        <div class="relative group">
-            <button class="flex items-center gap-1 text-[#F46906] transition-colors focus:outline-none py-2">
+</div>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-1 text-[#F46906] transition-colors focus:outline-none py-2">
                 Policies <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
-            </button>
-            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                <a href="terms.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#fff3ec] text-[#F46906] font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
+</button>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#fff3ec] text-[#F46906] font-semibold transition-colors" href="terms.html">
+<span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
                 </a>
-                <a href="refund.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="refund.html">
+<span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
                 </a>
-                <a href="privacy.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="privacy.html">
+<span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
                 </a>
-            </div>
-        </div>
-        
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="partnerships.html">Partnerships</a>
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
-    </div>
-
-    <div class="flex items-center gap-4">
-        <!-- Seamless Dark Mode Toggle -->
-        <button onclick="document.documentElement.classList.toggle('dark')" class="relative w-11 h-11 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-md border border-transparent hover:border-[#F46906]/30 dark:hover:border-[#F46906]/50 shadow-sm hover:shadow-[0_0_15px_rgba(244,105,6,0.2)] transition-all duration-500 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#F46906]/50">
-            <!-- Pulsing ring effect on hover -->
-            <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F46906]/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out origin-center pointer-events-none"></span>
-            
-            <div class="relative w-6 h-6 flex items-center justify-center pointer-events-none">
-                <!-- Moon icon for light mode -->
-                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-neutral-700 group-hover:rotate-[360deg] dark:opacity-0 dark:-rotate-90 dark:scale-0">dark_mode</span>
-                <!-- Sun icon for dark mode -->
-                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-amber-400 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100 group-hover:rotate-[360deg]">light_mode</span>
-            </div>
-        </button>
-        <a href="index.html" class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)] hover:shadow-[0_12px_24px_rgba(244,105,6,0.4)]">
+</div>
+</div>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="partnerships.html">Partnerships</a>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 border border-transparent hover:border-[#F46906]/30 transition-all duration-300 relative focus:outline-none" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined absolute text-[20px] text-neutral-700 dark:opacity-0 dark:scale-0 transition-all duration-300">dark_mode</span>
+<span class="material-symbols-outlined absolute text-[20px] text-amber-400 opacity-0 scale-0 dark:opacity-100 dark:scale-100 transition-all duration-300">light_mode</span>
+</button>
+<a class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)]" href="index.html" id="get-started-btn" style="display:none">
             Get Started
         </a>
-    </div>
+<button aria-label="Menu" class="flex items-center justify-center w-10 h-10 rounded-full bg-black/5 dark:bg-white/10 transition-all" id="hamburger-btn" onclick="toggleMobileMenu()" style="display:flex">
+<span class="material-symbols-outlined text-neutral-800 dark:text-white text-[22px]">menu</span>
+</button>
+</div>
 </nav>
 <!-- Main Content Canvas -->
-<main class="max-w-[1440px] mx-auto px-6 md:px-12 pt-12 md:pt-24 pb-32">
+<main class="max-w-[1440px] mx-auto px-6 md:px-6 md:px-12 pt-12 md:pt-24 pb-32">
 <!-- Header Section -->
 <header class="mb-24 flex flex-col md:flex-row gap-12 items-end justify-between">
 <div class="max-w-2xl">
@@ -131,7 +160,7 @@
                     Terms &amp; <br/><span class="text-primary italic">Conditions.</span>
 </h1>
 <p class="text-xl text-on-surface-variant font-body leading-relaxed">
-                    By accessing Picsi Drop, operated by Paverasa Pvt Ltd, you are entering into a binding agreement. These terms ensure the integrity of our chromatic digital gallery and protect our creative ecosystem.
+                    By accessing Picsi Drop, operated by Paveseva Private Limited, you are entering into a binding agreement. These terms ensure the integrity of our chromatic digital gallery and protect our creative ecosystem.
                 </p>
 </div>
 <div class="hidden lg:block w-64 h-64 rounded-xl overflow-hidden editorial-shadow bg-surface-container-low p-4">
@@ -160,7 +189,7 @@
 <h2 class="text-3xl font-headline font-bold tracking-tight">Introduction</h2>
 </div>
 <div class="space-y-6 text-on-surface-variant font-body leading-loose">
-<p>Welcome to Picsi Drop, a digital platform owned and operated by <span class="font-bold text-on-surface">Paverasa Pvt Ltd</span>. By using our website, services, and digital assets, you agree to comply with and be bound by the following terms and conditions. If you do not agree with any part of these terms, please refrain from using our platform.</p>
+<p>Welcome to Picsi Drop, a digital platform owned and operated by <span class="font-bold text-on-surface">Paveseva Private Limited</span>. By using our website, services, and digital assets, you agree to comply with and be bound by the following terms and conditions. If you do not agree with any part of these terms, please refrain from using our platform.</p>
 <p>Picsi Drop reserves the right to modify these terms at any time. Changes will be effective immediately upon posting to this page. Your continued use of the platform after such changes signifies your acceptance of the new terms.</p>
 </div>
 </section>
@@ -219,7 +248,7 @@
 <h2 class="text-3xl font-headline font-bold tracking-tight">Limitation of Liability</h2>
 </div>
 <div class="space-y-6 text-on-surface-variant font-body leading-loose relative z-10">
-<p>To the maximum extent permitted by law, <span class="font-bold">Paverasa Pvt Ltd</span> and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.</p>
+<p>To the maximum extent permitted by law, <span class="font-bold">Paveseva Private Limited</span> and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly.</p>
 <p class="bg-surface-container-high/50 p-6 rounded-lg border-l-4 border-primary italic">
                             "The platform is provided on an 'AS IS' and 'AS AVAILABLE' basis. We do not warrant that the chromatic curator service will be uninterrupted or error-free."
                         </p>
@@ -232,7 +261,7 @@
 <h2 class="text-3xl font-headline font-bold tracking-tight">Governing Law</h2>
 </div>
 <p class="text-lg opacity-80 mb-8 leading-relaxed">
-                        These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which Paverasa Pvt Ltd is incorporated, without regard to its conflict of law provisions.
+                        These Terms shall be governed and construed in accordance with the laws of the jurisdiction in which Paveseva Private Limited is incorporated, without regard to its conflict of law provisions.
                     </p>
 <div class="bg-surface-container-lowest/10 p-6 rounded-lg flex items-center justify-between">
 <div>
@@ -256,14 +285,14 @@
 </div>
 </main>
 <!-- Footer -->
-<footer class="w-full bg-[#f1f1f1] rounded-t-[3rem] mt-24">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-[1440px] mx-auto px-12 py-24">
+<footer class="w-full bg-[#f1f1f1] mt-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 max-w-[1440px] mx-auto px-6 md:px-12 py-12 md:py-24">
 <div class="space-y-6">
 <div class="text-xl font-bold tracking-tighter text-neutral-800">
                     Picsi Drop
                 </div>
 <p class="text-neutral-500 font-['Manrope'] text-sm leading-relaxed">
-                    Elevating the digital experience through intentional design and chromatic precision. A Paverasa Pvt Ltd venture.
+                    Elevating the digital experience through intentional design and chromatic precision. A Paveseva Private Limited venture.
                 </p>
 </div>
 <div class="space-y-6">
@@ -291,13 +320,13 @@
 </div>
 </div>
 </div>
-<div class="max-w-[1440px] mx-auto px-12 pb-12">
+<div class="max-w-[1440px] mx-auto px-6 md:px-12 pb-12">
 <div class="pt-12 border-t border-neutral-300 flex flex-col md:flex-row justify-between items-center gap-6">
 <p class="text-neutral-500 font-['Manrope'] text-sm">
                     © 2024 Picsi Drop. The Chromatic Curator.
                 </p>
 <div class="flex gap-8">
-<span class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">Built by Paverasa</span>
+<span class="text-[10px] font-bold text-neutral-400 uppercase tracking-widest">Built by Paveseva</span>
 </div>
 </div>
 </div>

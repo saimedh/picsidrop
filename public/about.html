@@ -8,8 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-
-
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -21,84 +19,115 @@
             clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
         }
     </style>
-    <link href="output.css" rel="stylesheet" />
-    <link href="data:," rel="icon">
+<link href="output.css" rel="stylesheet"/>
+<link href="data:," rel="icon"/>
+<script>
+(function() {
+    function updateNav() {
+        var hw = document.getElementById('hamburger-btn');
+        var gs = document.getElementById('get-started-btn');
+        var isMobile = window.innerWidth < 768;
+        if (hw) hw.style.display = isMobile ? 'flex' : 'none';
+        if (gs) gs.style.display = isMobile ? 'none' : 'inline-flex';
+    }
+    document.addEventListener('DOMContentLoaded', updateNav);
+    window.addEventListener('resize', updateNav);
+})();
+</script>
 </head>
 <body class="bg-surface font-body text-on-surface selection:bg-secondary-fixed">
+<!-- Mobile Menu Drawer -->
+<div class="fixed top-0 left-0 right-0 bottom-0 z-[200] bg-white dark:bg-neutral-900 flex-col items-start justify-center pt-0 px-6 gap-0 hidden overflow-y-auto" id="mobile-menu">
+<div class="flex justify-between items-center w-full mb-6 pt-4">
+<a class="text-xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2" href="index.html"><img alt="PicSiDrop Logo" class="h-10 md:h-12 w-auto mix-blend-multiply dark:filter dark:invert transition-transform hover:scale-105" src="images/logo.jpg"/></a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10" onclick="toggleMobileMenu()">
+<span class="material-symbols-outlined text-neutral-800 dark:text-white text-[22px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-4 w-full font-headline font-bold text-lg">
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="index.html"><span class="material-symbols-outlined">home</span>Home</a>
+<a class="text-[#F46906] flex items-center gap-3" href="about.html"><span class="material-symbols-outlined">info</span>About</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="features.html"><span class="material-symbols-outlined">star</span>Features</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="sender.html"><span class="material-symbols-outlined">outbox</span>For Senders</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="traveler.html"><span class="material-symbols-outlined">directions_car</span>For Travelers</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="partnerships.html"><span class="material-symbols-outlined">handshake</span>Partnerships</a>
+<a class="text-neutral-800 dark:text-white hover:text-[#F46906] transition-colors flex items-center gap-3" href="index.html#contact"><span class="material-symbols-outlined">mail</span>Contact</a>
+<div class="border-t border-black/10 dark:border-white/10 pt-4 flex gap-3">
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="terms.html">Terms</a>
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="refund.html">Refund</a>
+<a class="text-sm text-neutral-500 hover:text-[#F46906]" href="privacy.html">Privacy</a>
+</div>
+<a class="bg-[#F46906] text-white px-8 py-4 rounded-full font-bold text-base text-center shadow-lg mt-2" href="index.html">Get Started →</a>
+</div>
+</div>
+<script>
+function toggleMobileMenu() {
+    const m = document.getElementById('mobile-menu');
+    const isOpen = !m.classList.contains('hidden');
+    m.classList.toggle('hidden');
+    m.classList.toggle('flex');
+    document.body.classList.toggle('menu-open', !isOpen);
+}
+</script>
 <!-- TopNavBar (Shared Component) -->
 <!-- Floating Pill Navigation -->
-<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1000px] bg-white/70 dark:bg-neutral-900/70 backdrop-blur-3xl border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-full px-6 py-3 flex items-center justify-between transition-all duration-500 hover:shadow-[0_16px_48px_rgba(244,105,6,0.15)] hover:border-[#F46906]/30">
-    <a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html">
-        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#F46906] to-[#ffc5a3] flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform duration-300">
-            <span class="material-symbols-outlined text-[16px]">local_shipping</span>
-        </div>
-        Picsi Drop
-    </a>
-    
-    <div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
-        <a class="text-[#F46906] dark:text-[#F46906] border-b-2 border-[#F46906] transition-all duration-300 pb-0.5" href="about.html">About</a>
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
-        
-        
-        <div class="relative group">
-            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-3xl border-b border-black/5 dark:border-white/10 shadow-sm px-5 md:px-12 py-3 flex items-center justify-between transition-all duration-500">
+<a class="text-xl md:text-2xl font-extrabold tracking-tighter text-neutral-800 dark:text-white flex items-center gap-2 group" href="index.html"><img alt="PicSiDrop Logo" class="h-10 md:h-12 w-auto mix-blend-multiply dark:filter dark:invert transition-transform hover:scale-105" src="images/logo.jpg"/></a>
+<div class="hidden md:flex items-center gap-8 font-headline tracking-tight font-semibold text-sm">
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html">Home</a>
+<a class="text-[#F46906] dark:text-[#F46906] border-b-2 border-[#F46906] transition-all duration-300 pb-0.5" href="about.html">About</a>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="features.html">Features</a>
+<div class="relative group">
+<button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
                 Process <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
-            </button>
-            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                <a href="sender.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
+</button>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="sender.html">
+<span class="material-symbols-outlined text-[18px]">outbox</span> For Senders
                 </a>
-                <a href="traveler.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="traveler.html">
+<span class="material-symbols-outlined text-[18px]">directions_car</span> For Travelers
                 </a>
-            </div>
-        </div>
-        <div class="relative group">
-            <button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
+</div>
+</div>
+<div class="relative group">
+<button class="flex items-center gap-1 text-neutral-600 dark:text-neutral-300 group-hover:text-[#F46906] transition-colors focus:outline-none py-2">
                 Policies <span class="material-symbols-outlined text-[16px] transition-transform group-hover:rotate-180">expand_more</span>
-            </button>
-            <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                <a href="terms.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
+</button>
+<div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-56 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-2xl border border-black/5 dark:border-white/10 shadow-2xl rounded-2xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="terms.html">
+<span class="material-symbols-outlined text-[18px]">gavel</span> Terms &amp; Conditions
                 </a>
-                <a href="refund.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="refund.html">
+<span class="material-symbols-outlined text-[18px]">payments</span> Refund Policy
                 </a>
-                <a href="privacy.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors">
-                    <span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-[#fff3ec] dark:hover:bg-[#F46906]/10 hover:text-[#F46906] text-neutral-600 dark:text-neutral-300 font-semibold transition-colors" href="privacy.html">
+<span class="material-symbols-outlined text-[18px]">shield_person</span> Privacy Policy
                 </a>
-            </div>
-        </div>
-        
-        <a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
-    </div>
-
-    <div class="flex items-center gap-4">
-        <!-- Seamless Dark Mode Toggle -->
-        <button onclick="document.documentElement.classList.toggle('dark')" class="relative w-11 h-11 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-md border border-transparent hover:border-[#F46906]/30 dark:hover:border-[#F46906]/50 shadow-sm hover:shadow-[0_0_15px_rgba(244,105,6,0.2)] transition-all duration-500 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-[#F46906]/50">
-            <!-- Pulsing ring effect on hover -->
-            <span class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#F46906]/20 to-transparent scale-0 group-hover:scale-150 transition-transform duration-700 ease-out origin-center pointer-events-none"></span>
-            
-            <div class="relative w-6 h-6 flex items-center justify-center pointer-events-none">
-                <!-- Moon icon for light mode -->
-                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-neutral-700 group-hover:rotate-[360deg] dark:opacity-0 dark:-rotate-90 dark:scale-0">dark_mode</span>
-                <!-- Sun icon for dark mode -->
-                <span class="material-symbols-outlined absolute text-[22px] transition-all duration-700 ease-out text-amber-400 opacity-0 rotate-90 scale-0 dark:opacity-100 dark:rotate-0 dark:scale-100 group-hover:rotate-[360deg]">light_mode</span>
-            </div>
-        </button>
-        <a href="index.html" class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)] hover:shadow-[0_12px_24px_rgba(244,105,6,0.4)]">
+</div>
+</div>
+<a class="text-neutral-600 dark:text-neutral-300 hover:text-[#F46906] dark:hover:text-[#F46906] hover:-translate-y-0.5 transition-all duration-300" href="index.html#contact">Contact</a>
+</div>
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 dark:bg-white/10 border border-transparent hover:border-[#F46906]/30 transition-all duration-300 relative focus:outline-none" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined absolute text-[20px] text-neutral-700 dark:opacity-0 dark:scale-0 transition-all duration-300">dark_mode</span>
+<span class="material-symbols-outlined absolute text-[20px] text-amber-400 opacity-0 scale-0 dark:opacity-100 dark:scale-100 transition-all duration-300">light_mode</span>
+</button>
+<a class="bg-[#F46906] text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_8px_16px_rgba(244,105,6,0.3)]" href="index.html" id="get-started-btn" style="display:none">
             Get Started
         </a>
-    </div>
+<button aria-label="Menu" class="flex items-center justify-center w-10 h-10 rounded-full bg-black/5 dark:bg-white/10 transition-all" id="hamburger-btn" onclick="toggleMobileMenu()" style="display:flex">
+<span class="material-symbols-outlined text-neutral-800 dark:text-white text-[22px]">menu</span>
+</button>
+</div>
 </nav>
-<main class="pt-20">
+<main class="pt-16 md:pt-20">
 <!-- Hero: The Story -->
-<section class="relative py-24 px-8 overflow-hidden">
+<section class="relative py-16 md:py-24 px-6 md:px-8 overflow-hidden">
 <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
 <div class="relative z-10">
 <span class="bg-secondary-container text-on-secondary-fixed text-[10px] font-bold tracking-[0.2em] px-4 py-1.5 rounded-full uppercase mb-6 inline-block">THE JOURNEY</span>
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-on-surface leading-[1.05] tracking-tighter mb-8">
+<h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold text-on-surface leading-[1.05] tracking-tighter mb-6 md:mb-8">
                         Redefining how the world <span class="text-primary italic">moves</span> things.
                     </h1>
 <p class="text-xl text-on-surface-variant leading-relaxed max-w-xl">
@@ -108,7 +137,7 @@
 <div class="relative group">
 <div class="absolute -top-10 -right-10 w-64 h-64 bg-secondary-fixed rounded-full blur-3xl opacity-20"></div>
 <div class="rounded-xl overflow-hidden editorial-shadow transform rotate-2 group-hover:rotate-0 transition-transform duration-500">
-<img class="w-full h-[500px] object-cover" data-alt="Modern minimalist workspace with abstract orange art on the wall and natural sunlight streaming through a window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWKYH9BSfw7RWIB2_7MIjk_Et5I35GQXWmcP3l0lk9qBZQhs3HBD0EY5FeYip9Ak_5TXdF6Z7tsV29QUpqTl7kmAlukZ48mbBOnfPPOkbiFhWRt2Eknrwfon7f4lqyJ9yrfZk5mVV7FOLMJSqrneWDNJXbDTzz62-JN8cG7cSVk8CU0kWABKu3D-A6wuesfByjLspyMBshDRt3KikGc4xGcw4t3pEgYeJnf7IbYGpmXzj1zVG4FyqU8T5BW2OpViAVZZeX0rHdnys"/>
+<img class="w-full h-[500px] object-contain bg-[#111]" alt="Paverasa Pvt Ltd" src="images/paverasa_office.jpg"/>
 </div>
 <div class="absolute -bottom-8 -left-8 bg-surface-container-lowest p-8 rounded-xl editorial-shadow max-w-[280px]">
 <p class="font-headline font-bold text-3xl text-primary">2026</p>
@@ -152,7 +181,7 @@
 <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
 <div class="max-w-2xl">
 <h2 class="text-5xl md:text-6xl font-headline font-extrabold text-on-surface tracking-tighter">The Visionaries</h2>
-<p class="text-on-surface-variant mt-6 text-lg">Meet the minds behind Paverasa Pvt Ltd, driving the future of travel-logistics.</p>
+<p class="text-on-surface-variant mt-6 text-lg">Meet the minds behind Paveseva Private Limited, driving the future of travel-logistics.</p>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -222,7 +251,7 @@
 <div class="relative p-10 bg-surface-container-lowest rounded-xl editorial-shadow">
 <div class="text-primary font-headline font-black text-6xl opacity-20 absolute top-4 right-6 select-none">01</div>
 <h4 class="font-headline font-bold text-xl mb-4">Inception</h4>
-<p class="text-on-surface-variant text-sm">Founded under Paverasa Pvt Ltd with a vision to connect travelers and shippers globally.</p>
+<p class="text-on-surface-variant text-sm">Founded under Paveseva Private Limited with a vision to connect travelers and shippers globally.</p>
 <p class="mt-8 text-primary font-bold text-xs uppercase tracking-widest">Q1 2024</p>
 </div>
 <!-- Milestone 2 -->
@@ -279,7 +308,7 @@
 <div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6 font-['Manrope'] text-sm">
 <div class="flex flex-col gap-2">
 <span class="text-lg font-black text-zinc-900 dark:text-zinc-50">Picsi Drop</span>
-<p class="text-zinc-500 dark:text-zinc-400">2026 Paverasa Pvt Ltd</p>
+<p class="text-zinc-500 dark:text-zinc-400">2026 Paveseva Private Limited</p>
 </div>
 <div class="flex flex-wrap justify-center gap-8">
 <a class="text-zinc-500 dark:text-zinc-400 hover:text-orange-600 dark:hover:text-orange-400 transition-colors opacity-80 hover:opacity-100" href="#">Features</a>
