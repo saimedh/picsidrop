@@ -19,7 +19,18 @@ const app  = express();
 const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ────────────────────────────────────────────────
-app.use(cors());
+app.use(cors({
+    origin: [
+        'http://localhost:3000',
+        'http://localhost:5173',
+        'https://picsidrop.vercel.app',
+        'https://picsidrop-api.onrender.com',
+        'https://www.picsidrop.com',
+    ],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -120,6 +131,36 @@ app.post('/api/partnerships', async (req, res) => {
     } catch (err) {
         console.error('[Partnership DB Error]:', err.message);
         res.status(500).json({ status: 'error', message: 'Failed to submit your inquiry. Please try again.' });
+    }
+});
+
+// 5. Waitlist / Early Access Signup  →  newsletter_subscribers
+app.post('/api/waitlist', async (req, res) => {
+    const { name, email, city, role } = req.body;
+
+    if (!name || !email) {
+        return res.status(400).json({ status: 'error', message: 'Name and email are required.' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        return res.status(400).json({ status: 'error', message: 'Please provide a valid email address.' });
+    }
+
+    try {
+        await prisma.newsletterSubscriber.upsert({
+            where:  { email },
+            update: { isActive: true },
+            create: { email }
+        });
+        console.log('[Waitlist] registered:', email, '| city:', city || 'N/A', '| role:', role || 'N/A');
+        res.status(200).json({
+            status: 'success',
+            message: `You're on the list, ${name}! We'll notify you at ${email} when Picsi Drop launches${city ? ' in ' + city : ''}.`
+        });
+    } catch (err) {
+        console.error('[Waitlist DB Error]:', err.message);
+        res.status(500).json({ status: 'error', message: 'Failed to add you to the waitlist. Please try again.' });
     }
 });
 
